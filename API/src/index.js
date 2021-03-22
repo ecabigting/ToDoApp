@@ -18,12 +18,13 @@ const startServer = async() => {
 
     await mongoose.connect(
         "mongodb://localhost:27017/ToDoAPP",{
-            useNewUrlParser : true
+            useNewUrlParser : true,
+            useUnifiedTopology : true
         }
     );
 
     app.listen({port : 4000},() =>
-        console.log(`Server ready! Listening at http://localhost:4000${server.graphqlPath}`)
+        console.log(` 🚀 Server ready! Listening at http://localhost:4000${server.graphqlPath}`)
     );
 
 };

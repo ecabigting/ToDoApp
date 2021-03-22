@@ -8,7 +8,7 @@ export const resolvers = {
         createToDo: async (_,{task,completed}) => {
             console.log("Add New To Do Item:" + task);
             let createddate = new Date();
-            let lastupdateddate = new Date();
+            let lastupdateddate = null;
             const todo = new ToDo({task,createddate,completed,lastupdateddate});
             await todo.save();
             console.log(todo);

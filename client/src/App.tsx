@@ -8,6 +8,7 @@ from '@apollo/client';
 import { onError } from '@apollo/client/link/error'
 import './App.css';
 import GetAllTodos from './Components/GetTodos';
+import AddToDoForm from './Components/AddTodoForm';
 
 const errorLink = onError(({ graphQLErrors, networkError}) => {
   if(graphQLErrors) {
@@ -28,12 +29,12 @@ const client = new ApolloClient({
   link: link
 });
 
-
 function App() {
   return (
       <ApolloProvider client={client}>
         {" "}
         <GetAllTodos/>
+        <AddToDoForm/>
       </ApolloProvider>
     );
 }
